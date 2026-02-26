@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Capture Photo</title>
+
+    <style>
+        body {
+            text-align: center;
+            padding: 20px;
+            font-family: Arial;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .camera-btn {
+            padding: 15px 25px;
+            background: #0d6efd;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>📸 Capture Photo</h2>
+<p>{{ visitor.name }}</p>
+
+<form method="POST" enctype="multipart/form-data" id="form">
+    {% csrf_token %}
+
+    <input type="file" 
+           id="cameraInput"
+           name="photo" 
+           accept="image/*" 
+           capture="environment"
+           required>
+
+    <button type="button" class="camera-btn" onclick="openCamera()">
+        Open Camera
+    </button>
+</form>
+
+<script>
+function openCamera() {
+    document.getElementById("cameraInput").click();
+}
+
+// AUTO OPEN CAMERA AFTER LOAD
+window.onload = function() {
+    setTimeout(() => {
+        openCamera();
+    }, 500);
+};
+
+// AUTO SUBMIT AFTER PHOTO SELECT
+document.getElementById("cameraInput").onchange = function() {
+    document.getElementById("form").submit();
+};
+</script>
+
+</body>
+</html>

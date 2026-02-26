@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Expo Command Center | Analytics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: #0f172a; /* Deep Space Blue */
+            color: #f8fafc;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            min-height: 100vh;
+        }
+
+        .dashboard-container {
+            padding: 40px 20px;
+        }
+
+        .header-section {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Glassmorphism Card */
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+
+        .stat-label {
+            color: #94a3b8;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        /* Gradient Accents */
+        .border-hot { border-bottom: 4px solid #ef4444; }
+        .border-warm { border-bottom: 4px solid #f59e0b; }
+        .border-cold { border-bottom: 4px solid #3b82f6; }
+        .border-success { border-bottom: 4px solid #10b981; }
+
+        .category-pill {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-action {
+            border-radius: 12px;
+            padding: 10px 20px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar glass-nav sticky-top">
+    <div class="container">
+        <span class="navbar-brand header-section mb-0 h1">🚀 EXPO ANALYTICS</span>
+        <div class="d-flex gap-2">
+            <a href="{% url 'export' %}" class="btn btn-outline-light btn-sm btn-action">
+                <i class="fa-solid fa-download me-1"></i> Export Excel
+            </a>
+            <a href="{% url 'entry-mode' %}" class="btn btn-primary btn-sm btn-action">
+                <i class="fa-solid fa-house me-1"></i> Home
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="container dashboard-container">
+    
+    <div class="row g-4 mb-5">
+        <div class="col-md-12">
+            <div class="stat-card p-4 text-center" style="background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(139,92,246,0.1));">
+                <div class="stat-label">Total Footfall</div>
+                <div class="stat-value text-white">{{ total }}</div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="stat-card p-4 border-hot">
+                <div class="stat-label"><i class="fa-solid fa-fire text-danger me-2"></i> Hot Leads</div>
+                <div class="stat-value text-danger">{{ hot }}</div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="stat-card p-4 border-warm">
+                <div class="stat-label"><i class="fa-solid fa-sun text-warning me-2"></i> Warm Leads</div>
+                <div class="stat-value text-warning">{{ warm }}</div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="stat-card p-4 border-cold">
+                <div class="stat-label"><i class="fa-solid fa-snowflake text-info me-2"></i> Cold Leads</div>
+                <div class="stat-value text-info">{{ cold }}</div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="stat-card p-4 border-success">
+                <div class="stat-label">✅ WhatsApp Sent</div>
+                <div class="stat-value text-success" style="font-size: 1.8rem;">{{ sent }}</div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="stat-card p-4">
+                <div class="stat-label">⏳ Pending</div>
+                <div class="stat-value text-secondary" style="font-size: 1.8rem;">{{ pending }}</div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="stat-card p-4">
+                <div class="stat-label">❌ Failed</div>
+                <div class="stat-value text-white-50" style="font-size: 1.8rem;">{{ failed }}</div>
+            </div>
+        </div>
+    </div>
+
+    <h4 class="mb-4 text-uppercase fw-bold" style="letter-spacing: 1px; color: #94a3b8;">
+        <i class="fa-solid fa-users me-2"></i> Category Distribution
+    </h4>
+
+    <div class="row g-3 text-center">
+        {% set categories = [
+            ('Students', students, 'fa-graduation-cap'),
+            ('Business', business, 'fa-briefcase'),
+            ('Investors', investors, 'fa-coins'),
+            ('Vendors', vendors, 'fa-store'),
+            ('Job Seekers', jobs, 'fa-user-tie')
+        ] %}
+
+        <div class="col">
+            <div class="category-pill">
+                <i class="fa-solid fa-graduation-cap mb-2 text-primary"></i>
+                <div class="small text-muted text-uppercase">Students</div>
+                <h3 class="mb-0 fw-bold">{{ students }}</h3>
+            </div>
+        </div>
+        <div class="col">
+            <div class="category-pill">
+                <i class="fa-solid fa-briefcase mb-2 text-warning"></i>
+                <div class="small text-muted text-uppercase">Business</div>
+                <h3 class="mb-0 fw-bold">{{ business }}</h3>
+            </div>
+        </div>
+        <div class="col">
+            <div class="category-pill">
+                <i class="fa-solid fa-coins mb-2 text-success"></i>
+                <div class="small text-muted text-uppercase">Investors</div>
+                <h3 class="mb-0 fw-bold">{{ investors }}</h3>
+            </div>
+        </div>
+        <div class="col">
+            <div class="category-pill">
+                <i class="fa-solid fa-store mb-2 text-info"></i>
+                <div class="small text-muted text-uppercase">Vendors</div>
+                <h3 class="mb-0 fw-bold">{{ vendors }}</h3>
+            </div>
+        </div>
+        <div class="col">
+            <div class="category-pill">
+                <i class="fa-solid fa-user-tie mb-2 text-light"></i>
+                <div class="small text-muted text-uppercase">Jobs</div>
+                <h3 class="mb-0 fw-bold">{{ jobs }}</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5 p-4 border border-danger border-opacity-25 rounded-4 bg-danger bg-opacity-10">
+        <h5 class="text-danger fw-bold"><i class="fa-solid fa-triangle-exclamation me-2"></i> Danger Zone</h5>
+        <p class="text-muted small">The following actions are irreversible.</p>
+        <div class="d-flex gap-2">
+            <a href="{% url 'reset-counter' %}" class="btn btn-outline-danger btn-sm px-4" onclick="return confirm('ERASE EVERYTHING?')">Reset All Data</a>
+            <a href="{% url 'delete-last' %}" class="btn btn-outline-warning btn-sm px-4">Delete Last Entry</a>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

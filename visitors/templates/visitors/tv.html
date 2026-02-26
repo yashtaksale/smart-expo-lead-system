@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Welcome Screen</title>
+
+  <style>
+    html,body{height:100%;margin:0}
+    .wrap{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      height:100%;
+      background:#111;
+      color:white;
+      font-family:Arial,Helvetica,sans-serif;
+      text-align:center;
+    }
+
+    .company{
+      font-size:3vw;
+      margin-bottom:1rem;
+      color:#ffc107;
+      font-weight:bold;
+    }
+
+    .name{
+      font-size:4vw;
+      font-weight:bold;
+      margin:0.4rem 0;
+    }
+
+    .btn{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#28a745;
+      color:white;
+      padding:12px 18px;
+      text-decoration:none;
+      border-radius:6px;
+      font-size:18px;
+    }
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+  <div>
+    <h1>Welcome to our Stall!</h1>
+
+    <div id="company" class="company"></div>
+    <div id="names"></div>
+  </div>
+</div>
+
+<a href="/" class="btn">Back to Signup</a>
+
+<script>
+async function fetchLatest(){
+  try{
+    const res = await fetch('/latest/');
+    const j = await res.json();
+
+    const companyDiv = document.getElementById('company');
+    const namesDiv = document.getElementById('names');
+
+    namesDiv.innerHTML = "";
+
+    /* ---- SINGLE ENTRY ---- */
+    if(j.ok && j.mode === "single"){
+        companyDiv.textContent = j.company;
+
+        const d = document.createElement("div");
+        d.className = "name";
+        d.textContent = j.name;
+        namesDiv.appendChild(d);
+    }
+
+    /* ---- GROUP ENTRY ---- */
+    if(j.ok && j.mode === "group"){
+        companyDiv.textContent = j.group_name;
+
+        j.members.forEach(m => {
+            const d = document.createElement("div");
+            d.className = "name";
+
+            // FIX: Display name instead of [object Object]
+            if (typeof m === "string") {
+                d.textContent = m;
+            } else {
+                d.textContent = m.name;   // Show the name field
+            }
+
+            namesDiv.appendChild(d);
+        });
+    }
+
+  } catch(e){
+    console.error(e);
+  }
+}
+
+setInterval(fetchLatest, 2000);
+fetchLatest();
+</script>
+</body>
+</html>

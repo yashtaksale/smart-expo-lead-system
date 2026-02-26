@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Select Entry Mode | Expo Connect</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background: #f4f7f6; }
+        .main-card { border-radius: 15px; border: none; }
+        .btn-entry { padding: 12px; font-weight: 600; font-size: 1.1rem; border-radius: 8px; }
+        .qr-section { background: white; border-radius: 12px; padding: 20px; border: 1px solid #e0e0e0; }
+        .section-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #6c757d; margin-bottom: 10px; display: block; }
+        .divider { border-top: 1px solid #dee2e6; margin: 20px 0; }
+    </style>
+</head>
+
+<body>
+
+<div class="container py-5">
+    <div class="card shadow-lg main-card p-4 mx-auto" style="max-width: 480px;">
+
+        <div class="text-center mb-4">
+            <h3 class="fw-bold text-dark">Expo Lead Capture</h3>
+            <p class="text-muted small">Manage visitor registrations and data</p>
+        </div>
+
+        <div class="alert alert-info text-center shadow-sm mb-4">
+            <div class="small text-uppercase mb-1">Total Signed In</div>
+            <div class="h2 fw-bold mb-0">{{ total_count }}</div>
+        </div>
+
+        <span class="section-label text-center">Registration Modes</span>
+        <div class="d-grid gap-3 mb-4">
+            <a href="{% url 'signup' %}" class="btn btn-primary btn-entry shadow-sm">
+                👤 Single Visitor Entry
+            </a>
+            <a href="{% url 'group-signup' %}" class="btn btn-warning btn-entry shadow-sm">
+                👥 Group / Family Entry
+            </a>
+        </div>
+
+        <span class="section-label text-center">Management</span>
+        <div class="d-grid gap-2 mb-2">
+            <a href="{% url 'admin-tools' %}" class="btn btn-outline-secondary">
+                ⚙️ Admin Dashboard & Reports
+            </a>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="qr-section text-center mb-4">
+            <h5 class="fw-bold mb-1">📱 Self-Registration</h5>
+            <p class="text-muted small">Visitors can scan and register themselves</p>
+            
+            <div class="bg-light p-3 d-inline-block rounded-3 mb-2">
+                <img src="{% url 'qr' %}" width="180" class="img-fluid rounded" alt="Registration QR">
+            </div>
+            
+            <div class="alert alert-success py-2 mt-2 mb-0" style="font-size: 0.9rem;">
+                🚀 Quick 30-second sign-up
+            </div>
+        </div>
+
+        <div class="p-3 border rounded bg-light">
+            <span class="section-label text-danger mb-2">Danger Zone</span>
+            <div class="row g-2">
+                <div class="col-6">
+                    <a href="{% url 'delete-last' %}" 
+                       class="btn btn-outline-danger btn-sm w-100"
+                       onclick="return confirm('Delete last entry?')">
+                        🗑️ Delete Last
+                    </a>
+                </div>
+                <div class="col-6">
+                    <a href="{% url 'reset-counter' %}" 
+                       class="btn btn-danger btn-sm w-100"
+                       onclick="return confirm('CRITICAL: Delete ALL visitors?')">
+                        🚨 Reset All
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

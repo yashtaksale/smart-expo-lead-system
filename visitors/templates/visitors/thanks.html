@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Success | Expo Lead Capture</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background: #f4f7f6; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .main-card { border-radius: 20px; border: none; overflow: hidden; }
+        .success-header { background: #00d2ff; background: linear-gradient(to right, #3a7bd5, #00d2ff); color: white; padding: 30px 20px; }
+        .visitor-info { background: #fff; border: 1px solid #e0e6ed; border-radius: 15px; margin-top: -20px; position: relative; z-index: 2; }
+        .camera-step-box { background-color: #ffffff; border: 2px solid #e0f2fe; border-radius: 15px; padding: 25px; position: relative; transition: transform 0.2s; }
+        .qr-wrapper { background: #f8fafc; border-radius: 12px; padding: 15px; display: inline-block; border: 1px solid #f1f5f9; }
+        .step-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #3b82f6; color: white; padding: 2px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
+        .btn-custom { border-radius: 10px; padding: 12px; font-weight: 600; }
+    </style>
+</head>
+
+<body>
+
+<div class="container py-5">
+    <div class="card shadow-lg main-card mx-auto" style="max-width: 500px;">
+        
+        <div class="success-header text-center">
+            <div class="display-4 mb-2">✅</div>
+            <h3 class="fw-bold mb-0">Registration Complete</h3>
+        </div>
+
+        <div class="card-body p-4">
+            {% if visitor %}
+                <div class="visitor-info shadow-sm p-3 mb-4 text-center">
+                    <div class="text-muted small text-uppercase fw-bold">Visitor Profile</div>
+                    <h4 class="text-primary fw-bold mb-1">{{ visitor.name }}</h4>
+                    <p class="text-secondary mb-0">{{ visitor.company }}</p>
+                    <div class="badge bg-light text-dark border mt-2">ID: #{{ visitor.id }}</div>
+                </div>
+
+                <div class="camera-step-box text-center shadow-sm mb-4">
+                    <span class="step-badge">ACTION REQUIRED</span>
+                    <h5 class="fw-bold text-dark mt-2">📸 Final Step: Capture Photo</h5>
+                    <p class="text-muted small mb-4">
+                        Scan the QR code below or use the URL to take a photo. 
+                        <strong>WhatsApp is sent instantly after capture.</strong>
+                    </p>
+
+                    <div class="qr-wrapper mb-3 shadow-sm">
+                        <img src="{% url 'generate-qr' visitor.id %}" 
+                             style="width:180px; height:180px;" 
+                             alt="Scan to take photo">
+                    </div>
+
+                    <div class="input-group input-group-sm mb-2">
+                        <span class="input-group-text bg-white">URL</span>
+                        <input type="text" class="form-control text-center bg-light font-monospace" 
+                               value="http://192.168.1.2:8000/camera/{{ visitor.id }}/" readonly>
+                    </div>
+                </div>
+
+                <p class="text-center text-muted small px-3">
+                    Thank you for joining us today, <strong>{{ visitor.name }}</strong>! We've saved your details for the expo.
+                </p>
+
+            {% else %}
+                <div class="alert alert-warning text-center">
+                    <h5>No active session</h5>
+                    <p class="mb-0">Please return to the entry screen.</p>
+                </div>
+            {% endif %}
+
+            <div class="d-grid gap-2 mt-4">
+                <a href="{% url 'signup' %}" class="btn btn-success btn-custom shadow-sm">
+                    ➕ Register Another Visitor
+                </a>
+                <a href="{% url 'tv' %}" class="btn btn-outline-secondary btn-custom">
+                    📺 Back to TV Display
+                </a>
+            </div>
+        </div>
+        
+        <div class="bg-light py-3 text-center border-top">
+            <span class="text-muted" style="font-size: 0.75rem;">Powered by Microtronics Lead Capture</span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
