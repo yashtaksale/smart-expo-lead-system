@@ -114,23 +114,49 @@ Visitor Database (SQLite)
             ├── Category Distribution
             └── Excel Export
 ```
-📸 Project Screenshots
+---
+
+# 📸 Project Screenshots
+
+Explore the key interfaces of the **Smart Expo Lead Capture System**.
+
+---
 
 ### 📝 Visitor Signup Page
+<p align="center">
+<img width="900" alt="Visitor Signup Page" src="https://github.com/user-attachments/assets/704816c7-82b7-4cc9-86c1-738ed93f7af4">
+</p>
 
-![Signup]<img width="1195" height="919" alt="Screenshot 2026-03-11 145412" src="https://github.com/user-attachments/assets/704816c7-82b7-4cc9-86c1-738ed93f7af4" />
+💡 Visitors register their details at the stall using a simple and intuitive form.
+
+---
 
 ### 📷 Thank You Page
+<p align="center">
+<img width="500" alt="Thank You Page" src="https://github.com/user-attachments/assets/fe7570ce-26d5-4ccf-a364-95a4a2b2555c">
+</p>
 
-![Camera]<img width="693" height="863" alt="Screenshot 2026-03-11 145609" src="https://github.com/user-attachments/assets/fe7570ce-26d5-4ccf-a364-95a4a2b2555c" />
+💡 After registration and photo capture, visitors see a confirmation page.
+
+---
 
 ### 📊 Admin Dashboard
+<p align="center">
+<img width="900" alt="Admin Dashboard" src="https://github.com/user-attachments/assets/f7e925f5-b311-43e3-89e2-ec7e1c47c08b">
+</p>
 
-![Dashboard]<img width="1384" height="917" alt="Screenshot 2026-03-11 145513" src="https://github.com/user-attachments/assets/f7e925f5-b311-43e3-89e2-ec7e1c47c08b" />
+💡 Admins can monitor visitor analytics, lead distribution, and export visitor data.
+
+---
 
 ### 📺 TV Welcome Display
+<p align="center">
+<img width="900" alt="TV Welcome Display" src="https://github.com/user-attachments/assets/f1afd989-40d5-4d11-ba29-a7f1d58fe0d0">
+</p>
 
-![TV]<img width="1910" height="917" alt="Screenshot 2026-03-11 150800" src="https://github.com/user-attachments/assets/f1afd989-40d5-4d11-ba29-a7f1d58fe0d0" />
+💡 Displays a real-time welcome message for newly registered visitors on the stall screen.
+
+---
 
 ## ⚙ Installation
 
