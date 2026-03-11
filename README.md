@@ -118,19 +118,19 @@ Visitor Database (SQLite)
 
 ### 📝 Visitor Signup Page
 
-<img width="1195" height="919" alt="Screenshot 2026-03-11 145412" src="https://github.com/user-attachments/assets/704816c7-82b7-4cc9-86c1-738ed93f7af4" />
+![Signup]<img width="1195" height="919" alt="Screenshot 2026-03-11 145412" src="https://github.com/user-attachments/assets/704816c7-82b7-4cc9-86c1-738ed93f7af4" />
 
 ### 📷 Thank You Page
 
-<img width="693" height="863" alt="Screenshot 2026-03-11 145609" src="https://github.com/user-attachments/assets/fe7570ce-26d5-4ccf-a364-95a4a2b2555c" />
+![Camera]<img width="693" height="863" alt="Screenshot 2026-03-11 145609" src="https://github.com/user-attachments/assets/fe7570ce-26d5-4ccf-a364-95a4a2b2555c" />
 
 ### 📊 Admin Dashboard
 
-<img width="1384" height="917" alt="Screenshot 2026-03-11 145513" src="https://github.com/user-attachments/assets/f7e925f5-b311-43e3-89e2-ec7e1c47c08b" />
+![Dashboard]<img width="1384" height="917" alt="Screenshot 2026-03-11 145513" src="https://github.com/user-attachments/assets/f7e925f5-b311-43e3-89e2-ec7e1c47c08b" />
 
 ### 📺 TV Welcome Display
 
-<img width="1910" height="917" alt="Screenshot 2026-03-11 150800" src="https://github.com/user-attachments/assets/f1afd989-40d5-4d11-ba29-a7f1d58fe0d0" />
+![TV]<img width="1910" height="917" alt="Screenshot 2026-03-11 150800" src="https://github.com/user-attachments/assets/f1afd989-40d5-4d11-ba29-a7f1d58fe0d0" />
 
 ## ⚙ Installation
 
