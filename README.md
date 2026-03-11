@@ -245,9 +245,3 @@ https://github.com/yashtaksale
 ⭐ If you like this project, consider giving it a **star on GitHub**.
 
 ---
-
-# 📊 Repository Stats
-
-<p align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=yashtaksale&show_icons=true&theme=tokyonight">
-</p>
