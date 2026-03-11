@@ -1,204 +1,192 @@
-# Smart Expo Lead Capture System
+<div align="center">
 
-A Django-based **Visitor Management & Lead Automation System** designed for exhibitions, tech expos, and business stalls.
-The system captures visitor details, scores leads automatically, captures photos via QR-based camera access, and sends automated WhatsApp follow-ups.
+# 🚀 Smart Expo Lead Capture System
+
+### Visitor Management & Lead Automation Platform for Exhibitions and Tech Events
+
+![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge\&logo=python)
+![Django](https://img.shields.io/badge/Django-Web%20Framework-green?style=for-the-badge\&logo=django)
+![Selenium](https://img.shields.io/badge/Selenium-Automation-orange?style=for-the-badge\&logo=selenium)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
+![Status](https://img.shields.io/badge/Project-Active-brightgreen?style=for-the-badge)
+
+</div>
 
 ---
 
-## 🚀 Features
+# 🌟 Overview
+
+**Smart Expo Lead Capture System** is a Django-based platform designed for exhibitions, business expos, and technology events to efficiently capture visitor leads and automate follow-ups.
+
+The system allows visitors to register through a simple form, automatically calculates **lead scores**, captures visitor photos via QR-based camera access, sends **automated WhatsApp follow-ups**, and provides an **admin analytics dashboard** for managing leads.
+
+This system helps businesses **convert exhibition visitors into potential clients efficiently**.
+
+---
+
+# ✨ Key Features
 
 * 📋 Visitor Registration System
 * 👥 Group Visitor Registration
 * 🔥 Intelligent Lead Scoring (Hot / Warm / Cold)
-* 📷 QR-Based Camera Capture for Visitors
-* 📱 Automated WhatsApp Follow-up Messaging
+* 📷 QR-Based Camera Capture
+* 📱 Automated WhatsApp Messaging
 * 📊 Admin Analytics Dashboard
-* 📺 Live TV Welcome Display for Visitors
+* 📺 Real-Time TV Welcome Display
 * 📤 Excel Export of Visitor Data
-* 🔐 Admin Login Panel
+* 🔐 Secure Admin Login Panel
 
 ---
 
-## 🧠 Lead Scoring Logic
+# 🎬 Project Demo
 
-Visitors are automatically classified based on category and provided information.
+<p align="center">
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHBkNHF1M3JqZ3Q0MTRmM3M1MnhkYWRkdmR3ZXpsMWl3YW5xczI5dyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/coxQHKASG60HrHtvkt/giphy.gif" width="700">
+</p>
 
-| Category       | Score  |
-| -------------- | ------ |
-| Investor       | Hot 🔥 |
-| Business Owner | Hot 🔥 |
-| Vendor         | Warm   |
-| Job Seeker     | Warm   |
-| Student        | Cold   |
+Experience the **Smart Expo Lead Capture System** in action — from visitor registration to automated lead management.
 
-Additional score is added if the visitor provides:
-
-* Company name
-* Email address
-
----
-
-## 🏗 System Workflow
-
-1. Visitor scans QR code at the stall
-2. Visitor fills registration form
-3. System calculates **lead score**
-4. Visitor photo captured through QR camera page
-5. Visitor appears on **TV welcome display**
-6. Automated **WhatsApp message** is sent
-7. Admin can view analytics & export leads
-
----
-
-## 🖥 Tech Stack
-
-Backend:
-
-* Python
-* Django
-
-Frontend:
-
-* HTML
-* CSS
-* JavaScript
-
-Automation:
-
-* Selenium
-* WhatsApp Web
-
-Database:
-
-* SQLite
-
-Other Libraries:
-
-* OpenPyXL
-* QRCode
-
----
-
-## 🏗 System Architecture
-
-```
-Visitor
-   │
-   ▼
-QR Code Scan
-   │
-   ▼
-Signup Form (Django)
-   │
-   ▼
-Visitor Database (SQLite)
-   │
-   ├── Lead Scoring Engine
-   │        │
-   │        ▼
-   │   Hot / Warm / Cold
-   │
-   ├── Camera Capture
-   │        │
-   │        ▼
-   │   Visitor Photo Storage
-   │
-   ├── WhatsApp Automation
-   │        │
-   │        ▼
-   │   Follow-up Message Sent
-   │
-   └── Admin Dashboard
-            │
-            ├── Visitor Analytics
-            ├── Category Distribution
-            └── Excel Export
-```
 ---
 
 # 📸 Project Screenshots
 
-Explore the key interfaces of the **Smart Expo Lead Capture System**.
-
----
-
 ### 📝 Visitor Signup Page
-<p align="center">
+
 <img width="900" alt="Visitor Signup Page" src="https://github.com/user-attachments/assets/704816c7-82b7-4cc9-86c1-738ed93f7af4">
-</p>
-
-💡 Visitors register their details at the stall using a simple and intuitive form.
-
----
 
 ### 📷 Thank You Page
-<p align="center">
+
 <img width="500" alt="Thank You Page" src="https://github.com/user-attachments/assets/fe7570ce-26d5-4ccf-a364-95a4a2b2555c">
-</p>
-
-💡 After registration and photo capture, visitors see a confirmation page.
-
----
 
 ### 📊 Admin Dashboard
-<p align="center">
+
 <img width="900" alt="Admin Dashboard" src="https://github.com/user-attachments/assets/f7e925f5-b311-43e3-89e2-ec7e1c47c08b">
-</p>
-
-💡 Admins can monitor visitor analytics, lead distribution, and export visitor data.
-
----
 
 ### 📺 TV Welcome Display
-<p align="center">
-<img width="900" alt="TV Welcome Display" src="https://github.com/user-attachments/assets/f1afd989-40d5-4d11-ba29-a7f1d58fe0d0">
-</p>
 
-💡 Displays a real-time welcome message for newly registered visitors on the stall screen.
+<img width="900" alt="TV Welcome Display" src="https://github.com/user-attachments/assets/f1afd989-40d5-4d11-ba29-a7f1d58fe0d0">
 
 ---
 
-## ⚙ Installation
+# 🧠 System Architecture
 
-Clone the repository:
+```
+                Visitor
+                   │
+                   ▼
+            QR Code Scan
+                   │
+                   ▼
+            Signup Form
+               (Django)
+                   │
+                   ▼
+            Visitor Database
+               (SQLite)
+                   │
+       ┌───────────┼────────────┐
+       ▼           ▼            ▼
+ Lead Scoring   Photo Capture   WhatsApp Automation
+   Engine          System           (Selenium)
+       │           │                │
+       ▼           ▼                ▼
+  Hot / Warm / Cold      Visitor Image Storage
+                   │
+                   ▼
+             Admin Dashboard
+                   │
+         ┌─────────┼───────────┐
+         ▼         ▼           ▼
+     Analytics   Lead Data   Excel Export
+```
+
+---
+
+# 🔄 Visitor Workflow
+
+```
+Visitor Arrives at Stall
+        │
+        ▼
+Scans QR Code
+        │
+        ▼
+Fills Registration Form
+        │
+        ▼
+Lead Score Calculated
+        │
+        ▼
+Visitor Photo Captured
+        │
+        ▼
+Welcome Display on TV
+        │
+        ▼
+Automated WhatsApp Follow-up
+        │
+        ▼
+Admin Dashboard Analytics
+```
+
+---
+
+# 🧰 Tech Stack
+
+| Layer         | Technology              |
+| ------------- | ----------------------- |
+| Backend       | Django                  |
+| Programming   | Python                  |
+| Frontend      | HTML, CSS, JavaScript   |
+| Automation    | Selenium                |
+| Database      | SQLite                  |
+| Data Export   | OpenPyXL                |
+| QR Generation | Python QRCode           |
+| Messaging     | WhatsApp Web Automation |
+
+---
+
+# ⚙ Installation
+
+Clone the repository
 
 ```
 git clone https://github.com/yashtaksale/smart-expo-lead-system.git
 ```
 
-Navigate into project folder:
+Navigate to project folder
 
 ```
 cd smart-expo-lead-system
 ```
 
-Create virtual environment:
+Create virtual environment
 
 ```
 python -m venv venv
 ```
 
-Activate environment:
+Activate virtual environment
 
-Windows
+Windows:
 
 ```
 venv\Scripts\activate
 ```
 
-Install dependencies:
+Install dependencies
 
 ```
 pip install django selenium openpyxl qrcode pillow
 ```
 
-Run migrations:
+Run migrations
 
 ```
 python manage.py migrate
 ```
 
-Start the server:
+Start server
 
 ```
 python manage.py runserver
@@ -206,19 +194,7 @@ python manage.py runserver
 
 ---
 
-## 🔐 Admin Access
-
-Admin login password is defined inside:
-
-```
-settings.py
-```
-
----
-
-
-
-## 📈 Future Improvements
+# 📈 Future Improvements
 
 * AI-based lead scoring
 * Cloud deployment (AWS / Render)
@@ -229,7 +205,7 @@ settings.py
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
 **Yash Taksale**
 
@@ -241,6 +217,5 @@ https://github.com/yashtaksale
 
 ---
 
-## ⭐ If you like this project
+⭐ If you like this project, consider giving it a **star** on GitHub.
 
-Give the repository a **star ⭐**
