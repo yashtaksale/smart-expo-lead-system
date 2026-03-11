@@ -79,25 +79,50 @@ Other Libraries:
 
 ---
 
-## 📂 Project Structure
+## 🏗 System Architecture
 
 ```
-expo_signin/
-│
-├── expo_signin/        # Django project settings
-├── visitors/           # Main application
-│   ├── models.py
-│   ├── views.py
-│   ├── forms.py
-│   ├── services/
-│   └── templates/
-│
-├── media/              # Visitor images
-├── manage.py
-└── README.md
+Visitor
+   │
+   ▼
+QR Code Scan
+   │
+   ▼
+Signup Form (Django)
+   │
+   ▼
+Visitor Database (SQLite)
+   │
+   ├── Lead Scoring Engine
+   │        │
+   │        ▼
+   │   Hot / Warm / Cold
+   │
+   ├── Camera Capture
+   │        │
+   │        ▼
+   │   Visitor Photo Storage
+   │
+   ├── WhatsApp Automation
+   │        │
+   │        ▼
+   │   Follow-up Message Sent
+   │
+   └── Admin Dashboard
+            │
+            ├── Visitor Analytics
+            ├── Category Distribution
+            └── Excel Export
 ```
-
----
+##screenshots
+Visitor signup page
+<img width="1195" height="919" alt="Screenshot 2026-03-11 145412" src="https://github.com/user-attachments/assets/704816c7-82b7-4cc9-86c1-738ed93f7af4" />
+Thank you page
+<img width="693" height="863" alt="Screenshot 2026-03-11 145609" src="https://github.com/user-attachments/assets/fe7570ce-26d5-4ccf-a364-95a4a2b2555c" />
+Admin page
+<img width="1384" height="917" alt="Screenshot 2026-03-11 145513" src="https://github.com/user-attachments/assets/f7e925f5-b311-43e3-89e2-ec7e1c47c08b" />
+TV display
+<img width="1909" height="915" alt="Screenshot 2026-03-11 145621" src="https://github.com/user-attachments/assets/87582912-4fa5-4376-9e6f-cdd844e69dc8" />
 
 ## ⚙ Installation
 
@@ -156,6 +181,8 @@ settings.py
 ```
 
 ---
+
+
 
 ## 📈 Future Improvements
 
