@@ -114,20 +114,21 @@ Visitor Database (SQLite)
             ├── Category Distribution
             └── Excel Export
 ```
-## Screenshots
-Visitor signup page
+📸 Project Screenshots
+
+### 📝 Visitor Signup Page
 
 <img width="1195" height="919" alt="Screenshot 2026-03-11 145412" src="https://github.com/user-attachments/assets/704816c7-82b7-4cc9-86c1-738ed93f7af4" />
 
-Thank you page
+### 📷 Thank You Page
 
 <img width="693" height="863" alt="Screenshot 2026-03-11 145609" src="https://github.com/user-attachments/assets/fe7570ce-26d5-4ccf-a364-95a4a2b2555c" />
 
-Admin page
+### 📊 Admin Dashboard
 
 <img width="1384" height="917" alt="Screenshot 2026-03-11 145513" src="https://github.com/user-attachments/assets/f7e925f5-b311-43e3-89e2-ec7e1c47c08b" />
 
-TV display
+### 📺 TV Welcome Display
 
 <img width="1909" height="915" alt="Screenshot 2026-03-11 145621" src="https://github.com/user-attachments/assets/87582912-4fa5-4376-9e6f-cdd844e69dc8" />
 
