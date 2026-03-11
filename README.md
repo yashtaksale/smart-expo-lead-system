@@ -1,5 +1,6 @@
 <p align="center">
-  <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/512/external-expo-digital-marketing-flatart-icons-outline-flatarticons.png" width="140">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="60"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" width="60"/>
 </p>
 
 <h1 align="center">🚀 Smart Expo Lead Capture System</h1>
