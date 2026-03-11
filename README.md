@@ -130,8 +130,7 @@ Visitor Database (SQLite)
 
 ### 📺 TV Welcome Display
 
-<img width="1909" height="915" alt="Screenshot 2026-03-11 145621" src="https://github.com/user-attachments/assets/87582912-4fa5-4376-9e6f-cdd844e69dc8" />
-
+<img width="1910" height="917" alt="Screenshot 2026-03-11 150800" src="https://github.com/user-attachments/assets/f1afd989-40d5-4d11-ba29-a7f1d58fe0d0" />
 
 ## ⚙ Installation
 
