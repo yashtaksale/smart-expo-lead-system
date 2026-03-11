@@ -1,3 +1,15 @@
+<p align="center">
+  <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/512/external-expo-digital-marketing-flatart-icons-outline-flatarticons.png" width="150">
+</p>
+
+<h1 align="center">
+Smart Expo Lead Capture System
+</h1>
+
+<p align="center">
+Visitor Management & Lead Automation Platform for Exhibitions
+</p>
+
 <div align="center">
 
 # 🚀 Smart Expo Lead Capture System
@@ -194,6 +206,20 @@ python manage.py runserver
 
 ---
 
+---
+
+## 💼 Real World Use Cases
+
+This system can be used in:
+
+• Technology exhibitions  
+• Startup demo events  
+• Business networking expos  
+• College project exhibitions  
+• Product launch events  
+
+Companies can easily capture visitor information and automatically follow up with potential leads.
+
 # 📈 Future Improvements
 
 * AI-based lead scoring
@@ -219,3 +245,10 @@ https://github.com/yashtaksale
 
 ⭐ If you like this project, consider giving it a **star** on GitHub.
 
+---
+
+## 📊 Repository Stats
+
+<p align="center">
+<img src="https://github-readme-stats.vercel.app/api?username=yashtaksale&show_icons=true&theme=tokyonight">
+</p>
