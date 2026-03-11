@@ -1,20 +1,14 @@
 <p align="center">
-  <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/512/external-expo-digital-marketing-flatart-icons-outline-flatarticons.png" width="150">
+  <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/512/external-expo-digital-marketing-flatart-icons-outline-flatarticons.png" width="140">
 </p>
 
-<h1 align="center">
-Smart Expo Lead Capture System
-</h1>
+<h1 align="center">🚀 Smart Expo Lead Capture System</h1>
 
 <p align="center">
-Visitor Management & Lead Automation Platform for Exhibitions
+Visitor Management & Lead Automation Platform for Exhibitions and Tech Events
 </p>
 
-<div align="center">
-
-# 🚀 Smart Expo Lead Capture System
-
-### Visitor Management & Lead Automation Platform for Exhibitions and Tech Events
+<p align="center">
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge\&logo=python)
 ![Django](https://img.shields.io/badge/Django-Web%20Framework-green?style=for-the-badge\&logo=django)
@@ -22,7 +16,7 @@ Visitor Management & Lead Automation Platform for Exhibitions
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Project-Active-brightgreen?style=for-the-badge)
 
-</div>
+</p>
 
 ---
 
@@ -64,19 +58,27 @@ Experience the **Smart Expo Lead Capture System** in action — from visitor reg
 
 ### 📝 Visitor Signup Page
 
-<img width="900" alt="Visitor Signup Page" src="https://github.com/user-attachments/assets/704816c7-82b7-4cc9-86c1-738ed93f7af4">
+<p align="center">
+<img width="900" src="https://github.com/user-attachments/assets/704816c7-82b7-4cc9-86c1-738ed93f7af4">
+</p>
 
 ### 📷 Thank You Page
 
-<img width="500" alt="Thank You Page" src="https://github.com/user-attachments/assets/fe7570ce-26d5-4ccf-a364-95a4a2b2555c">
+<p align="center">
+<img width="500" src="https://github.com/user-attachments/assets/fe7570ce-26d5-4ccf-a364-95a4a2b2555c">
+</p>
 
 ### 📊 Admin Dashboard
 
-<img width="900" alt="Admin Dashboard" src="https://github.com/user-attachments/assets/f7e925f5-b311-43e3-89e2-ec7e1c47c08b">
+<p align="center">
+<img width="900" src="https://github.com/user-attachments/assets/f7e925f5-b311-43e3-89e2-ec7e1c47c08b">
+</p>
 
 ### 📺 TV Welcome Display
 
-<img width="900" alt="TV Welcome Display" src="https://github.com/user-attachments/assets/f1afd989-40d5-4d11-ba29-a7f1d58fe0d0">
+<p align="center">
+<img width="900" src="https://github.com/user-attachments/assets/f1afd989-40d5-4d11-ba29-a7f1d58fe0d0">
+</p>
 
 ---
 
@@ -89,12 +91,10 @@ Experience the **Smart Expo Lead Capture System** in action — from visitor reg
             QR Code Scan
                    │
                    ▼
-            Signup Form
-               (Django)
+            Signup Form (Django)
                    │
                    ▼
-            Visitor Database
-               (SQLite)
+            Visitor Database (SQLite)
                    │
        ┌───────────┼────────────┐
        ▼           ▼            ▼
@@ -166,7 +166,7 @@ Clone the repository
 git clone https://github.com/yashtaksale/smart-expo-lead-system.git
 ```
 
-Navigate to project folder
+Navigate to the project folder
 
 ```
 cd smart-expo-lead-system
@@ -178,9 +178,7 @@ Create virtual environment
 python -m venv venv
 ```
 
-Activate virtual environment
-
-Windows:
+Activate environment (Windows)
 
 ```
 venv\Scripts\activate
@@ -198,7 +196,7 @@ Run migrations
 python manage.py migrate
 ```
 
-Start server
+Start the server
 
 ```
 python manage.py runserver
@@ -206,19 +204,19 @@ python manage.py runserver
 
 ---
 
----
-
-## 💼 Real World Use Cases
+# 💼 Real World Use Cases
 
 This system can be used in:
 
-• Technology exhibitions  
-• Startup demo events  
-• Business networking expos  
-• College project exhibitions  
-• Product launch events  
+* Technology exhibitions
+* Startup demo events
+* Business networking expos
+* College project exhibitions
+* Product launch events
 
 Companies can easily capture visitor information and automatically follow up with potential leads.
+
+---
 
 # 📈 Future Improvements
 
@@ -238,16 +236,16 @@ Companies can easily capture visitor information and automatically follow up wit
 Computer Science Engineering Student
 Passionate about building intelligent automation systems and scalable web applications.
 
-GitHub:
+GitHub
 https://github.com/yashtaksale
 
 ---
 
-⭐ If you like this project, consider giving it a **star** on GitHub.
+⭐ If you like this project, consider giving it a **star on GitHub**.
 
 ---
 
-## 📊 Repository Stats
+# 📊 Repository Stats
 
 <p align="center">
 <img src="https://github-readme-stats.vercel.app/api?username=yashtaksale&show_icons=true&theme=tokyonight">
